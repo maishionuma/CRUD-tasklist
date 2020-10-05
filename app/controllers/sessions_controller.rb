@@ -23,7 +23,7 @@ class SessionsController < ApplicationController
   end
   
   private
-
+  
   def login(email, password)
     @user = User.find_by(email: email)
     if @user && @user.authenticate(password)
@@ -33,14 +33,6 @@ class SessionsController < ApplicationController
     else
       # ログイン失敗
       return false
-    end
-  end
-  
-  before_action :require_user_logged_in
-  
-  def require_user_logged_in
-    unless logged_in?
-      redirect_to controller: :sessions, action: :new
     end
   end
 end

@@ -54,13 +54,4 @@ class TasksController < ApplicationController
   def task_params
     params.require(:task).permit(:content, :status)
   end
-  
-  #redirect_loginpage
-  before_action :require_user_logged_in
-  
-  def require_user_logged_in
-    unless logged_in?
-      redirect_to controller: :sessions, action: :new
-    end
-  end
 end
