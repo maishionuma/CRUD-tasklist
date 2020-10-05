@@ -1,9 +1,4 @@
-<div class="text-center">
-  <h1>新規登録</h1>
-</div>
-
-<div class="row">
-  <div class="col-sm-6 offset-sm-3">
+<h1>新規登録</h1>
 
     <%= form_with(model: @user, local: true) do |f| %>
       
@@ -11,12 +6,12 @@
         <%= f.label :name, '名前' %>
         <%= f.text_field :name, class: 'form-control' %>
       </div>
-
+      
       <div class="form-group">
         <%= f.label :email, 'メール' %>
         <%= f.email_field :email, class: 'form-control' %>
       </div>
-
+      
       <div class="form-group">
         <%= f.label :password, 'パスワード' %>
         <%= f.password_field :password, class: 'form-control' %>
@@ -28,6 +23,7 @@
       </div>
 
       <%= f.submit '新規登録', class: 'btn btn-primary btn-block' %>
+      
     <% end %>
   </div>
 </div>
